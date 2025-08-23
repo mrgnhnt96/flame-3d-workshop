@@ -1,0 +1,4 @@
+enum ControlType {
+  platformer,
+  fps,
+}
