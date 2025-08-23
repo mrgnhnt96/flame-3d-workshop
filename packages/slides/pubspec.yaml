@@ -1,0 +1,25 @@
+name: flame_3d_workshop_slides
+description: >
+  The main flutter_deck project with the slides for the Flutter & Friends
+  2025 flame_3d workshop.
+publish_to: 'none'
+version: 0.1.0
+resolution: workspace
+
+environment:
+  sdk: ">=3.8.0 <4.0.0"
+  flutter: ">=3.32.0"
+
+dependencies:
+  flame: ^1.31.0
+  flame_3d: ^0.1.0
+  flame_audio: ^2.11.9
+  flutter:
+    sdk: flutter
+  flutter_deck: ^0.21.0
+
+dev_dependencies:
+  flame_lint: ^1.4.2
+
+flutter:
+  uses-material-design: true

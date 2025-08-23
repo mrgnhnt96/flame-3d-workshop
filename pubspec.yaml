@@ -1,0 +1,39 @@
+name: workspace
+repository: https://github.com/bluefireteam/flutter_and_friends_2025_flame_3d_workshop_template
+workspace:
+  - packages/slides
+
+environment:
+  sdk: ">=3.8.0 <4.0.0"
+
+dev_dependencies:
+  melos: ^7.1.0
+
+melos:
+  command:
+    bootstrap:
+      environment:
+        sdk: ">=3.8.0 <4.0.0"
+        flutter: ">=3.32.0"
+  scripts:
+    lint:all:
+      steps:
+        - analyze
+        - format
+      description: Run all static analysis checks.
+
+    analyze:
+      run: melos exec dart analyze .
+      description: Run `dart analyze` for all packages.
+
+    format-check:
+      run: melos exec dart format . --set-exit-if-changed
+      description: Run `dart format` checks for all packages.
+
+    markdown-check:
+      run: markdownlint . --ignore-path .markdownlintignore --config .markdownlint.yaml
+      description: Runs the markdown linting check.
+
+    markdown-fix:
+      run: markdownlint . --fix --ignore-path .markdownlintignore --config .markdownlint.yaml
+      description: Fixes the markdown linting errors.
