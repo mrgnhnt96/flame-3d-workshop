@@ -1,4 +1,7 @@
-export 'slide_00_intro.dart';
-export 'slide_01_bg.dart';
-export 'slide_02_code.dart';
-export 'slide_03_game.dart';
+export 'slide_00_title.dart';
+export 'slide_01_intro.dart';
+export 'slide_02_agenda.dart';
+export 'slide_03_flame_game_loop.dart';
+export 'slide_sample_code.dart';
+export 'slide_sample_game.dart';
+export 'slide_sample_image.dart';

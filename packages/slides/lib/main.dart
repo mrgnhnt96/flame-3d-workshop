@@ -1,3 +1,4 @@
+import 'package:flame_3d_workshop_slides/slides/components/slides.dart';
 import 'package:flame_3d_workshop_slides/slides/slides.dart';
 import 'package:flame_3d_workshop_slides/utils/code.dart';
 import 'package:flutter/material.dart';
@@ -32,11 +33,15 @@ class FlutterDeckExample extends StatelessWidget {
           dark: FlutterDeckBackground.solid(Color(0xFF16222A)),
         ),
       ),
-      slides: const [
-        Slide00Intro(),
-        Slide01Bg(),
-        Slide02Code(),
-        Slide03Game(),
+      slides: [
+        Slide00Title(),
+        Slide01Intro(),
+        Slide02Agenda(),
+        Slides.title('Flame Game Loop'),
+        Slide03FlameGameLoop(),
+        SlideSampleImage(),
+        SlideSampleCode(),
+        SlideSampleGame(),
       ],
     );
   }
