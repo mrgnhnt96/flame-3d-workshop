@@ -1,8 +1,8 @@
 import 'dart:ui';
 
 import 'package:flame/components.dart';
-import 'package:flame_3d_workshop_slides/game/control_type.dart';
-import 'package:flame_3d_workshop_slides/game/playground.dart';
+import 'package:flame_3d_workshop_slides/games/playground/control_type.dart';
+import 'package:flame_3d_workshop_slides/games/playground/playground.dart';
 
 class Crosshair extends Component with HasGameReference<Playground> {
   List<(Offset, Offset)> _lines = [];
