@@ -31,9 +31,9 @@ melos:
       description: Run `dart format` checks for all packages.
 
     markdown-check:
-      run: markdownlint . --ignore-path .markdownlintignore --config .markdownlint.yaml
+      run: markdownlint . --config .markdownlint.yaml
       description: Runs the markdown linting check.
 
     markdown-fix:
-      run: markdownlint . --fix --ignore-path .markdownlintignore --config .markdownlint.yaml
+      run: markdownlint . --fix --config .markdownlint.yaml
       description: Fixes the markdown linting errors.
