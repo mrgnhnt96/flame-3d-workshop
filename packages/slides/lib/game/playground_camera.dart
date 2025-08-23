@@ -20,7 +20,6 @@ class PlaygroundCamera extends CameraComponent3D
         hudComponents: [SimpleHud()],
       );
 
-
   void reset() {
     if (game.controlType == ControlType.fps) {
       position = player.position + Vector3(0, 1.7, 0); // Camera at head height

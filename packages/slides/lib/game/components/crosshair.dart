@@ -17,11 +17,11 @@ class Crosshair extends Component with HasGameReference<Playground> {
     _lines = [
       (
         (halfSize - Vector2(0, _radius)).toOffset(),
-        (halfSize + Vector2(0, _radius)).toOffset()
+        (halfSize + Vector2(0, _radius)).toOffset(),
       ),
       (
         (halfSize - Vector2(_radius, 0)).toOffset(),
-        (halfSize + Vector2(_radius, 0)).toOffset()
+        (halfSize + Vector2(_radius, 0)).toOffset(),
       ),
     ];
   }
