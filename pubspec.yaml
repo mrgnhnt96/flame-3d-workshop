@@ -7,6 +7,7 @@ environment:
   sdk: ">=3.8.0 <4.0.0"
 
 dev_dependencies:
+  flame_lint: ^1.4.2
   melos: ^7.1.0
 
 melos:
@@ -20,6 +21,7 @@ melos:
       steps:
         - analyze
         - format
+        - markdown-check
       description: Run all static analysis checks.
 
     analyze:
@@ -31,9 +33,9 @@ melos:
       description: Run `dart format` checks for all packages.
 
     markdown-check:
-      run: markdownlint . --config .markdownlint.yaml
+      run: markdownlint . --ignore-path .markdownlintignore --config .markdownlint.yaml
       description: Runs the markdown linting check.
 
     markdown-fix:
-      run: markdownlint . --fix --config .markdownlint.yaml
+      run: markdownlint . --fix --ignore-path .markdownlintignore --config .markdownlint.yaml
       description: Fixes the markdown linting errors.

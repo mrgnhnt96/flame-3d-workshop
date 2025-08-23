@@ -1,16 +1,32 @@
 # slides
 
-A new Flutter project.
 
-## Getting Started
+An interactive slide deck for the Flame 3D Workshop.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Setup
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Clone this monorepo to get started, or use `ignite` to generate your own Flame 3D project.
+
+In order to run, you will need to follow
+[the pre-requisites for setting up flame_3d](https://github.com/flame-engine/flame/tree/main/packages/flame_3d#prerequisites)
+; notably:
+
+- Run it on macOS;
+
+- Enable Impeller by adding the following key to `/macos/Runner/Info.plist`:
+
+```xml
+<dict>
+    ...
+ <key>FLTEnableImpeller</key>
+ <true/>
+</dict>
+```
+
+- And then run with:
+
+```bash
+flutter run -d macos --enable-flutter-gpu
+```
