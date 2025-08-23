@@ -22,7 +22,8 @@ class FlutterDeckExample extends StatelessWidget {
         ),
       ),
       slides: const [
-        TestSlide(),
+        Slide00Intro(),
+        Slide01Bg(),
       ],
     );
   }
