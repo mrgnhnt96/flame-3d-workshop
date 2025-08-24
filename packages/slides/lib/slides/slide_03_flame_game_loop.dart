@@ -15,7 +15,10 @@ class Slide03FlameGameLoop extends Slide {
       Container(
         width: 800,
         height: 600,
-        child: const GameWidget.controlled(gameFactory: GameLoop.new),
+        child: const GameWidget.controlled(
+          gameFactory: GameLoop.new,
+          autofocus: false,
+        ),
       ),
     ];
   }

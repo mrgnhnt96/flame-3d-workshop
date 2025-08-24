@@ -39,6 +39,7 @@ class FlutterDeckExample extends StatelessWidget {
         Slide02Agenda(),
         Slides.title('Flame Game Loop'),
         Slide03FlameGameLoop(),
+        Slide04FlameComponents(),
         SlideSampleImage(),
         SlideSampleCode(),
         SlideSampleGame(),

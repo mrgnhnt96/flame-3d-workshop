@@ -55,7 +55,11 @@ class SlideText {
 
   static Text code(String text) {
     return Text.rich(
-      Code.highlight('print("Hello, World!");'),
+      Code.highlight(text),
+      style: const TextStyle(
+        fontSize: 24.0,
+        fontFamily: 'Monaco',
+      ),
     );
   }
 }
