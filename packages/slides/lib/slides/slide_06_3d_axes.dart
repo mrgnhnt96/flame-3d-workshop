@@ -226,9 +226,12 @@ class ConeMesh extends Mesh {
     final vertices = <Vertex>[];
     final indices = <int>[];
 
-    // Base Center
+    // texture mapping: circle radius 0.25 in UV
+    const centerV = 0.75;
+
+    // Base Center (circle in upper half)
     vertices.add(
-      Vertex(position: Vector3.zero(), texCoord: Vector2(0.5, 1.0)),
+      Vertex(position: Vector3.zero(), texCoord: Vector2(0.5, centerV)),
     );
 
     // Base triangulation
@@ -236,8 +239,8 @@ class ConeMesh extends Mesh {
       final theta = 2 * pi * i / segments;
       final x = radius * cos(theta);
       final z = radius * sin(theta);
-      final u = 0.5 + 0.5 * cos(theta);
-      final v = 0.5 + 0.5 * sin(theta);
+      final u = 0.5 + 0.25 * cos(theta);
+      final v = centerV + 0.25 * sin(theta);
       vertices.add(
         Vertex(position: Vector3(x, 0, z), texCoord: Vector2(u, v)),
       );
@@ -265,10 +268,14 @@ class ConeMesh extends Mesh {
     final vertices = <Vertex>[];
     final indices = <int>[];
 
-    // Tip
-    final tipPos = Vector3(0, height, 0);
-    final tipTex = Vector2(0.5, 0.0);
-    vertices.add(Vertex(position: tipPos, texCoord: tipTex));
+    // texture mapping: base edge along arc in upper half
+    const centerV = 0.75;
+    const tipV = 0.25;
+
+    // Tip (sector center in lower half)
+    vertices.add(
+      Vertex(position: Vector3(0, height, 0), texCoord: Vector2(0.5, tipV)),
+    );
 
     // Side triangulation
     for (var i = 0; i < segments; i++) {
@@ -276,9 +283,8 @@ class ConeMesh extends Mesh {
       final x = radius * cos(theta);
       final z = radius * sin(theta);
       final u = i / segments;
-      const v = 1.0;
       vertices.add(
-        Vertex(position: Vector3(x, 0, z), texCoord: Vector2(u, v)),
+        Vertex(position: Vector3(x, 0, z), texCoord: Vector2(u, centerV)),
       );
     }
 
