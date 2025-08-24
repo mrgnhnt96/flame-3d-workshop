@@ -2,9 +2,9 @@ import 'package:flame_3d_workshop_slides/slides/components/slide.dart';
 import 'package:flame_3d_workshop_slides/slides/components/slide_text.dart';
 import 'package:flutter/material.dart';
 
-class Slide04FlameComponents extends Slide {
-  Slide04FlameComponents({super.key})
-    : super(route: '/slide_04_flame_components');
+class Slide05FlameComponents extends Slide {
+  Slide05FlameComponents({super.key})
+    : super(route: '/slide_05_flame_components');
 
   @override
   List<Widget> children(BuildContext context) {

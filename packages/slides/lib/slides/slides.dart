@@ -1,8 +1,10 @@
 export 'slide_00_title.dart';
 export 'slide_01_intro.dart';
 export 'slide_02_agenda.dart';
-export 'slide_03_flame_game_loop.dart';
-export 'slide_04_flame_components.dart';
+export 'slide_03_flame_passive_vs_active_rendering.dart';
+export 'slide_04_flame_game_loop.dart';
+export 'slide_05_flame_components.dart';
+export 'slide_06_3d_axes.dart';
 export 'slide_sample_code.dart';
 export 'slide_sample_game.dart';
 export 'slide_sample_image.dart';

@@ -10,6 +10,7 @@ class Slide02Agenda extends Slide {
       SlideText.title('Agenda'),
       SlideText.bullet('Flame - Primer'),
       SlideText.bullet('3D Rendering Concepts'),
+      SlideText.bullet('Time to Practice!'),
     ];
   }
 }
