@@ -1,5 +1,4 @@
 import 'package:flame/components.dart';
-import 'package:flame/extensions.dart' as v64 show Vector2;
 import 'package:flame_3d/camera.dart';
 import 'package:flame_3d_workshop_slides/games/playground/components/simple_hud.dart';
 import 'package:flame_3d_workshop_slides/games/playground/control_type.dart';
@@ -15,14 +14,14 @@ class PlaygroundCamera extends CameraComponent3D
         position: Vector3(0, 2, 4),
         projection: CameraProjection.perspective,
         viewport: FixedResolutionViewport(
-          resolution: v64.Vector2(800, 600),
+          resolution: Vector2(800, 600),
         ),
         hudComponents: [SimpleHud()],
       );
 
   void reset() {
     if (game.controlType == ControlType.fps) {
-      position = player.position + Vector3(0, 1.7, 0); // Camera at head height
+      position = player.position + headHeight;
       target = position + _getForwardVectorFromPlayer();
     } else {
       position =
@@ -43,7 +42,7 @@ class PlaygroundCamera extends CameraComponent3D
   }
 
   void _fpsCameraUpdate(double dt) {
-    position.setFrom(player.position + Vector3(0, 1.7, 0));
+    position.setFrom(player.position + headHeight);
     target.setFrom(position + _getForwardVectorFromPlayer());
   }
 
@@ -72,6 +71,7 @@ class PlaygroundCamera extends CameraComponent3D
     return forward.normalized() * -_distance;
   }
 
+  static final Vector3 headHeight = Vector3(0, 1.7, 0);
   static const double _distance = 5.0;
   static const double _cameraRotationSpeed = 6.0;
   static const double _cameraLinearSpeed = 12.0;

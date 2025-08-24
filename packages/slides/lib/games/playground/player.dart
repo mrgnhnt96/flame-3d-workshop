@@ -21,13 +21,13 @@ class Player extends MeshComponent
   double speedY = 0.0;
 
   double _yaw = 0.0; // horizontal angle
-  double _pitch = 0.0; // vertical angle
   double get yaw => _yaw;
   set yaw(double value) {
     _yaw = value % tau;
     _updateRotation();
   }
 
+  double _pitch = 0.0; // vertical angle
   double get pitch => _pitch;
   set pitch(double value) {
     _pitch = value.clamp(-1.2, 1.2);
@@ -38,7 +38,8 @@ class Player extends MeshComponent
     transform.rotation.setAxisAngle(_up, _yaw);
   }
 
-  Vector3 get lookAt => Vector3(sin(_yaw), 0.0, cos(_yaw));
+  Vector3 get lookAt => Vector3(sin(yaw), 0.0, cos(yaw));
+  Vector3 get right => Vector3(cos(yaw), 0.0, -sin(yaw));
 
   Player({required Vector3 position})
     : super(
@@ -90,31 +91,17 @@ class Player extends MeshComponent
   }
 
   void _handleMovement(double dt) {
-    final runningModifier = isRunning ? 2.5 : 1.0;
-    if (game.controlType == ControlType.fps) {
-      final delta = Mouse.getDelta();
-      _yaw -= delta.dx * _mouseSensitivity * dt;
-      _pitch -= delta.dy * _mouseSensitivity * dt;
-      _pitch = _pitch.clamp(-1.2, 1.2);
-      _updateRotation();
-
-      final forward = Vector3(sin(_yaw), 0, cos(_yaw));
-      final right = Vector3(cos(_yaw), 0, -sin(_yaw));
-      final move =
-          (forward * -_input.y + right * _input.x).normalized() *
-          runningModifier *
-          _walkingSpeed *
-          dt;
-      position.add(move);
-    } else {
-      _yaw += -_input.x * _rotationSpeed * dt;
-      _updateRotation();
-      final movement = lookAt.scaled(
-        -_input.y * runningModifier * _walkingSpeed * dt,
-      );
-      position.add(movement);
+    switch (game.controlType) {
+      case ControlType.fps:
+        _handleFPSMovement(dt);
+      case ControlType.platformer:
+        _handlePlatformerMovement(dt);
     }
 
+    _handleVerticalMovement(dt);
+  }
+
+  void _handleVerticalMovement(double dt) {
     if (speedY != 0 || position.y > _floorHeight) {
       position.y += speedY * dt + 0.5 * _accY * dt * dt;
       speedY += _accY * dt;
@@ -127,6 +114,29 @@ class Player extends MeshComponent
       speedY = 0;
     }
   }
+
+  void _handlePlatformerMovement(double dt) {
+    yaw += -_input.x * _rotationSpeed * dt;
+    final movement = lookAt.scaled(
+      -_input.y * _runningModifier * _walkingSpeed * dt,
+    );
+    position.add(movement);
+  }
+
+  void _handleFPSMovement(double dt) {
+    final delta = Mouse.getDelta();
+    yaw -= delta.dx * _mouseSensitivity * dt;
+    pitch -= delta.dy * _mouseSensitivity * dt;
+
+    final move =
+        (lookAt * -_input.y + right * _input.x).normalized() *
+        _runningModifier *
+        _walkingSpeed *
+        dt;
+    position.add(move);
+  }
+
+  double get _runningModifier => isRunning ? 2.5 : 1.0;
 
   static const double _mouseSensitivity = 1.0;
   static const double _rotationSpeed = 3.0;
