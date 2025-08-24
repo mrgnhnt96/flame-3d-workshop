@@ -35,11 +35,19 @@ class Player extends MeshComponent
   }
 
   void _updateRotation() {
-    transform.rotation.setAxisAngle(_up, _yaw);
+    transform.rotation.setAxisAngle(_up, yaw);
   }
 
   Vector3 get lookAt => Vector3(sin(yaw), 0.0, cos(yaw));
-  Vector3 get right => Vector3(cos(yaw), 0.0, -sin(yaw));
+  Vector3 get right => Vector3(-cos(yaw), 0.0, sin(yaw));
+
+  Vector3 get forward {
+    final yawQuaternion = Quaternion.axisAngle(_yawAxis, yaw);
+    final pitchQuaternion = Quaternion.axisAngle(_pitchAxis, pitch);
+    return Vector3(0, 0, 1)
+      ..applyQuaternion(yawQuaternion * pitchQuaternion)
+      ..normalize();
+  }
 
   Player({required Vector3 position})
     : super(
@@ -126,7 +134,7 @@ class Player extends MeshComponent
   void _handleFPSMovement(double dt) {
     final delta = Mouse.getDelta();
     yaw -= delta.dx * _mouseSensitivity * dt;
-    pitch -= delta.dy * _mouseSensitivity * dt;
+    pitch += delta.dy * _mouseSensitivity * dt;
 
     final move =
         (lookAt * -_input.y + right * _input.x).normalized() *
@@ -144,5 +152,8 @@ class Player extends MeshComponent
   static const double _floorHeight = 1.0;
   static const double _jumpSpeed = 5.0;
   static const double _accY = -9.81;
+
   static final Vector3 _up = Vector3(0, 1, 0);
+  static final Vector3 _yawAxis = Vector3(0, 1, 0);
+  static final Vector3 _pitchAxis = Vector3(1, 0, 0);
 }

@@ -7,8 +7,6 @@ import 'package:flame_3d_workshop_slides/games/playground/playground.dart';
 
 class PlaygroundCamera extends CameraComponent3D
     with HasGameReference<Playground> {
-  // No longer stores its own mode; uses game.controlType
-
   PlaygroundCamera()
     : super(
         position: Vector3(0, 2, 4),
@@ -22,7 +20,7 @@ class PlaygroundCamera extends CameraComponent3D
   void reset() {
     if (game.controlType == ControlType.fps) {
       position = player.position + headHeight;
-      target = position + _getForwardVectorFromPlayer();
+      target = position + player.forward;
     } else {
       position =
           player.position +
@@ -43,16 +41,7 @@ class PlaygroundCamera extends CameraComponent3D
 
   void _fpsCameraUpdate(double dt) {
     position.setFrom(player.position + headHeight);
-    target.setFrom(position + _getForwardVectorFromPlayer());
-  }
-
-  Vector3 _getForwardVectorFromPlayer() {
-    final yaw = Quaternion.axisAngle(Vector3(0, 1, 0), player.yaw);
-    final pitch = Quaternion.axisAngle(Vector3(1, 0, 0), player.pitch);
-    final direction = Vector3(0, 0, 1);
-    direction.applyQuaternion(yaw);
-    direction.applyQuaternion(pitch);
-    return direction.normalized();
+    target.setFrom(position + player.forward);
   }
 
   Player get player => game.player;
