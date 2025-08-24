@@ -43,6 +43,8 @@ class FlutterDeckExample extends StatelessWidget {
         Slide05FlameComponents(),
         Slides.title('3D Rendering Concepts'),
         Slide06ThreeDimensionalAxes(),
+        Slide07ThreeDimensionalProjections(),
+        Slide08Matrices(),
         SlideSampleImage(),
         SlideSampleCode(),
         SlideSampleGame(),
