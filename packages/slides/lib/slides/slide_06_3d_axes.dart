@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:flame/components.dart' hide Matrix4;
 import 'package:flame/game.dart' hide Matrix4;
+import 'package:flame/palette.dart';
 import 'package:flame_3d/camera.dart';
 import 'package:flame_3d/components.dart';
 import 'package:flame_3d/game.dart';
@@ -49,12 +50,12 @@ class _ThreeDimensionalAxesGame extends FlameGame3D {
       MeshComponent(
         mesh: SphereMesh(
           radius: 0.3,
-          material: SpatialMaterial(albedoColor: const Color(0xFFFF00FF)),
+          material: SpatialMaterial(albedoColor: BasicPalette.white.color),
         ),
       ),
-      _AxisComponent(axis: Vector3(1, 0, 0), color: Colors.red),
-      _AxisComponent(axis: Vector3(0, 1, 0), color: Colors.green),
-      _AxisComponent(axis: Vector3(0, 0, 1), color: Colors.blue),
+      _AxisComponent(axis: Vector3(1, 0, 0), color: BasicPalette.red.color),
+      _AxisComponent(axis: Vector3(0, 1, 0), color: BasicPalette.green.color),
+      _AxisComponent(axis: Vector3(0, 0, 1), color: BasicPalette.blue.color),
     ]);
     return super.onLoad();
   }
