@@ -2,6 +2,7 @@ name: workspace
 repository: https://github.com/bluefireteam/flutter_and_friends_2025_flame_3d_workshop_template
 workspace:
   - packages/slides
+  - packages/template
 
 environment:
   sdk: ">=3.8.0 <4.0.0"
