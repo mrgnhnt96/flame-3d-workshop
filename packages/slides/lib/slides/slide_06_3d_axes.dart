@@ -2,13 +2,13 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flame/components.dart' hide Matrix4;
-import 'package:flame/game.dart' hide Matrix4;
 import 'package:flame/palette.dart';
 import 'package:flame_3d/camera.dart';
 import 'package:flame_3d/components.dart';
 import 'package:flame_3d/game.dart';
 import 'package:flame_3d/resources.dart';
 import 'package:flame_3d_workshop_slides/slides/components/slide.dart';
+import 'package:flame_3d_workshop_slides/slides/components/slide_game.dart';
 import 'package:flame_3d_workshop_slides/slides/components/slide_text.dart';
 import 'package:flutter/material.dart' hide Matrix4, Material;
 
@@ -19,14 +19,7 @@ class Slide06ThreeDimensionalAxes extends Slide {
   List<Widget> children(BuildContext context) {
     return [
       SlideText.title('3D Axes'),
-      Container(
-        width: 800,
-        height: 600,
-        child: const GameWidget.controlled(
-          gameFactory: _ThreeDimensionalAxesGame.new,
-          autofocus: false,
-        ),
-      ),
+      const SlideGame(game: _ThreeDimensionalAxesGame.new),
     ];
   }
 }

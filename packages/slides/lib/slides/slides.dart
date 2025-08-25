@@ -7,6 +7,8 @@ export 'slide_05_flame_components.dart';
 export 'slide_06_3d_axes.dart';
 export 'slide_07_3d_projections.dart';
 export 'slide_08_matrices.dart';
+export 'slide_09_glossary.dart';
+export 'slide_10_first_cube.dart';
 export 'slide_sample_code.dart';
 export 'slide_sample_game.dart';
 export 'slide_sample_image.dart';
