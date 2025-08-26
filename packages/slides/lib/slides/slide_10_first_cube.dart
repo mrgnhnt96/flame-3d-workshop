@@ -21,13 +21,12 @@ class Slide10FirstCube extends Slide {
         children: [
           SlideText.code('''
 class _FirstCubeGame extends FlameGame3D {
-  _FirstCubeGame()
-    : super(
-        world: World3D(clearColor: ...),
-        camera: CameraComponent3D(
-          position: Vector3.all(8),
-        ),
-      );
+  _FirstCubeGame() : super(
+    world: World3D(clearColor: ...),
+    camera: CameraComponent3D(
+      position: Vector3.all(8),
+    ),
+  );
 
   @override
   Future<void> onLoad() async {
