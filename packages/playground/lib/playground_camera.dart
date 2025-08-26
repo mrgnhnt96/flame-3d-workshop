@@ -10,10 +10,6 @@ class PlaygroundCamera extends CameraComponent3D
   PlaygroundCamera()
     : super(
         position: Vector3(0, 2, 4),
-        projection: CameraProjection.perspective,
-        viewport: FixedResolutionViewport(
-          resolution: Vector2(800, 600),
-        ),
         hudComponents: [SimpleHud()],
       );
 

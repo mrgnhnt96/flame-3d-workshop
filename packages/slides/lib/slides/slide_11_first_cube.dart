@@ -8,8 +8,8 @@ import 'package:flame_3d_workshop_slides/slides/components/slide_game.dart';
 import 'package:flame_3d_workshop_slides/slides/components/slide_text.dart';
 import 'package:flutter/material.dart' hide Matrix4, Material;
 
-class Slide10FirstCube extends Slide {
-  Slide10FirstCube({super.key}) : super(route: '/slide_10_first_cube');
+class Slide11FirstCube extends Slide {
+  Slide11FirstCube({super.key}) : super(route: '/slide_11_first_cube');
 
   @override
   List<Widget> children(BuildContext context) {
