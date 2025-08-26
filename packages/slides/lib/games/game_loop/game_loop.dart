@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flame/components.dart';
 import 'package:flame/game.dart';
-import 'package:flame_3d_workshop_slides/games/playground/util/canvas_extensions.dart';
+import 'package:flame_3d_workshop_playground/util/canvas_extensions.dart';
 
 /// A simple diagram explaining the Flame Game Loop
 class GameLoop extends FlameGame {

@@ -4,11 +4,11 @@ import 'package:flame/events.dart';
 import 'package:flame_3d/camera.dart';
 import 'package:flame_3d/components.dart';
 import 'package:flame_3d/game.dart';
-import 'package:flame_3d_workshop_slides/games/playground/components/room_bounds.dart';
-import 'package:flame_3d_workshop_slides/games/playground/control_type.dart';
-import 'package:flame_3d_workshop_slides/games/playground/player.dart';
-import 'package:flame_3d_workshop_slides/games/playground/playground_camera.dart';
-import 'package:flame_3d_workshop_slides/games/playground/util/mouse.dart';
+import 'package:flame_3d_workshop_playground/components/room_bounds.dart';
+import 'package:flame_3d_workshop_playground/control_type.dart';
+import 'package:flame_3d_workshop_playground/player.dart';
+import 'package:flame_3d_workshop_playground/playground_camera.dart';
+import 'package:flame_3d_workshop_playground/util/mouse.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 

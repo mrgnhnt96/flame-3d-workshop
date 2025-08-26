@@ -1,7 +1,6 @@
-name: flame_3d_workshop_slides
+name: flame_3d_workshop_playground
 description: >
-  The main flutter_deck project with the slides for the Flutter & Friends
-  2025 flame_3d workshop.
+  A more complete example for testing out flame_3d during the Flutter & Friends 2025 flame_3d workshop.
 publish_to: 'none'
 version: 0.1.0
 resolution: workspace
@@ -13,25 +12,16 @@ environment:
 dependencies:
   flame: ^1.31.0
   flame_3d: ^0.1.0
-  flame_3d_workshop_playground:
-    path: ../playground
   flame_audio: ^2.11.9
   flutter:
     sdk: flutter
-  flutter_deck: ^0.21.0
   pointer_lock:
     git:
       url: https://github.com/helgoboss/pointer_lock.git
       ref: main
-  syntax_highlight: ^0.5.0
 
 dev_dependencies:
   flame_lint: ^1.4.2
 
 flutter:
-  uses-material-design: true
-
-  assets:
-    - assets/images/avatars/
-    - assets/images/backgrounds/
-    - assets/images/diagrams/
+  uses-material-design: false

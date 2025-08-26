@@ -1,5 +1,5 @@
 import 'package:flame/game.dart';
-import 'package:flame_3d_workshop_slides/games/playground/playground.dart';
+import 'package:flame_3d_workshop_playground/playground.dart';
 import 'package:flame_3d_workshop_slides/slides/components/slide.dart';
 import 'package:flutter/material.dart';
 

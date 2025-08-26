@@ -7,10 +7,10 @@ import 'package:flame/palette.dart';
 import 'package:flame_3d/components.dart';
 import 'package:flame_3d/game.dart';
 import 'package:flame_3d/resources.dart';
-import 'package:flame_3d_workshop_slides/games/playground/control_type.dart';
-import 'package:flame_3d_workshop_slides/games/playground/playground.dart';
-import 'package:flame_3d_workshop_slides/games/playground/util/keyboard_utils.dart';
-import 'package:flame_3d_workshop_slides/games/playground/util/mouse.dart';
+import 'package:flame_3d_workshop_playground/control_type.dart';
+import 'package:flame_3d_workshop_playground/playground.dart';
+import 'package:flame_3d_workshop_playground/util/keyboard_utils.dart';
+import 'package:flame_3d_workshop_playground/util/mouse.dart';
 import 'package:flutter/services.dart';
 
 class Player extends MeshComponent
