@@ -52,6 +52,7 @@ class FlutterDeckExample extends StatelessWidget {
         Slide13TheCamera(),
         Slide14BirthTheCamera(),
         Slide15CameraTypes(),
+        Slide16Models(),
         Slides.title('Sample Slides'),
         SlideSampleImage(),
         SlideSampleCode(),

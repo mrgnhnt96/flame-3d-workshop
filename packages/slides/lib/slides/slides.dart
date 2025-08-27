@@ -14,6 +14,7 @@ export 'slide_12_meshes.dart';
 export 'slide_13_the_camera.dart';
 export 'slide_14_birth_the_camera.dart';
 export 'slide_15_camera_types.dart';
+export 'slide_16_models.dart';
 export 'slide_sample_code.dart';
 export 'slide_sample_game.dart';
 export 'slide_sample_image.dart';
