@@ -1,3 +1,0 @@
-dependency_overrides:
-  flame_3d:
-    path: ../flame/packages/flame_3d

@@ -7,7 +7,6 @@ import 'package:flame_3d/camera.dart';
 import 'package:flame_3d/components.dart';
 import 'package:flame_3d/model.dart';
 import 'package:flame_3d/parser.dart';
-import 'package:flame_3d/resources.dart';
 import 'package:flame_3d_workshop_slides/slides/components/slide.dart';
 import 'package:flame_3d_workshop_slides/slides/components/slide_game.dart';
 import 'package:flame_3d_workshop_slides/slides/components/slide_text.dart';

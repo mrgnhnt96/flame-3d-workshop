@@ -29,3 +29,5 @@
 .pub/
 **/build/
 .fvmrc
+
+pubspec_overrides.yaml
