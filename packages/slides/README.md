@@ -20,13 +20,15 @@ In order to run, you will need to follow
 ```xml
 <dict>
     ...
- <key>FLTEnableImpeller</key>
- <true/>
+	<key>FLTEnableImpeller</key>
+ 	<true/>
+	<key>FLTEnableFlutterGPU</key>
+ 	<true/>
 </dict>
 ```
 
 - And then run with:
 
 ```bash
-flutter run -d macos --enable-flutter-gpu
+flutter run -d macos 
 ```
