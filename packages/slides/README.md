@@ -20,10 +20,10 @@ In order to run, you will need to follow
 ```xml
 <dict>
     ...
-	<key>FLTEnableImpeller</key>
- 	<true/>
-	<key>FLTEnableFlutterGPU</key>
- 	<true/>
+    <key>FLTEnableImpeller</key>
+    <true/>
+    <key>FLTEnableFlutterGPU</key>
+    <true/>
 </dict>
 ```
 
