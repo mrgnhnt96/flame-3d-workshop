@@ -2,8 +2,8 @@ import 'package:flame_3d_workshop_slides/slides/components/slide.dart';
 import 'package:flame_3d_workshop_slides/slides/components/slide_image.dart';
 import 'package:flutter/material.dart' hide Matrix4, Material;
 
-class Slide08Matrices extends FullPageSlide {
-  Slide08Matrices({super.key}) : super(route: '/slide_08_matrices');
+class Slide09Matrices extends FullPageSlide {
+  Slide09Matrices({super.key}) : super(route: '/slide_09_matrices');
 
   @override
   Widget child(BuildContext context) {

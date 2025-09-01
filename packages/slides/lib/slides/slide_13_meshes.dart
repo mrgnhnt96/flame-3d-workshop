@@ -2,8 +2,8 @@ import 'package:flame_3d_workshop_slides/slides/components/slide.dart';
 import 'package:flame_3d_workshop_slides/slides/components/slide_text.dart';
 import 'package:flutter/material.dart' hide Matrix4, Material;
 
-class Slide12Meshes extends Slide {
-  Slide12Meshes({super.key}) : super(route: '/slide_12_meshes');
+class Slide13Meshes extends Slide {
+  Slide13Meshes({super.key}) : super(route: '/slide_13_meshes');
 
   @override
   List<Widget> children(BuildContext context) {

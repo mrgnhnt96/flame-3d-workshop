@@ -16,8 +16,8 @@ import 'package:flame_3d_workshop_slides/slides/components/slide_game.dart';
 import 'package:flame_3d_workshop_slides/slides/components/slide_text.dart';
 import 'package:flutter/material.dart' hide Matrix4, Material;
 
-class Slide17Animations extends Slide {
-  Slide17Animations({super.key}) : super(route: '/slide_17_animations');
+class Slide18Animations extends Slide {
+  Slide18Animations({super.key}) : super(route: '/slide_18_animations');
 
   @override
   List<Widget> children(BuildContext context) {

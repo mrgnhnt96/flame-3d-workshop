@@ -3,8 +3,8 @@ import 'package:flame_3d_workshop_slides/slides/components/slide_image.dart';
 import 'package:flame_3d_workshop_slides/slides/components/slide_text.dart';
 import 'package:flutter/material.dart' hide Matrix4, Material;
 
-class Slide13TheCamera extends Slide {
-  Slide13TheCamera({super.key}) : super(route: '/slide_13_the_camera');
+class Slide14TheCamera extends Slide {
+  Slide14TheCamera({super.key}) : super(route: '/slide_14_the_camera');
 
   @override
   List<Widget> children(BuildContext context) {

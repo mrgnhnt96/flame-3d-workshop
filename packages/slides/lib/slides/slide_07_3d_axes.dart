@@ -12,8 +12,8 @@ import 'package:flame_3d_workshop_slides/slides/components/slide_game.dart';
 import 'package:flame_3d_workshop_slides/slides/components/slide_text.dart';
 import 'package:flutter/material.dart' hide Matrix4, Material;
 
-class Slide06ThreeDimensionalAxes extends Slide {
-  Slide06ThreeDimensionalAxes({super.key}) : super(route: '/slide_06_3d_axes');
+class Slide07ThreeDimensionalAxes extends Slide {
+  Slide07ThreeDimensionalAxes({super.key}) : super(route: '/slide_07_3d_axes');
 
   @override
   List<Widget> children(BuildContext context) {
