@@ -7,7 +7,7 @@ import 'package:flame_3d/components.dart';
 import 'package:flame_3d/resources.dart';
 import 'package:flutter/material.dart' hide Texture;
 
-const int cellSize = 20;
+const int cellSize = 4;
 
 class RoomBounds extends Component {
   @override
