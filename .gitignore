@@ -9,7 +9,6 @@
 .atom/
 .buildlog/
 .history
-.vscode/
 .venv/
 
 # IntelliJ related
