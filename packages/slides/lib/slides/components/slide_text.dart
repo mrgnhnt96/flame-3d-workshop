@@ -62,4 +62,14 @@ class SlideText {
       ),
     );
   }
+
+  static Text small(String text) {
+    return Text(
+      text,
+      style: const TextStyle(
+        fontSize: 12.0,
+        fontWeight: FontWeight.normal,
+      ),
+    );
+  }
 }

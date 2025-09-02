@@ -29,6 +29,7 @@ class Slide01Intro extends Slide {
               SlideText.subtitle('@wolfenrain'),
               Image.asset('assets/images/avatars/wolfenrain.jpg', width: 264),
               SlideText.p('Not Faire - notfaire.com'),
+              SlideText.small('Apparently works at FlutterFlow'),
             ],
           ),
         ],
