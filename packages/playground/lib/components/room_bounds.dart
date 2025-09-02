@@ -7,7 +7,7 @@ import 'package:flame_3d/components.dart';
 import 'package:flame_3d/resources.dart';
 import 'package:flutter/material.dart' hide Texture;
 
-const int cellSize = 4;
+const checkerboardFloorGrid = 10;
 
 class RoomBounds extends Component {
   @override
@@ -21,11 +21,11 @@ class RoomBounds extends Component {
             albedoTexture: Texture(
               Uint32List.fromList(
                 List.generate(
-                  cellSize * cellSize * 4,
+                  checkerboardFloorGrid * checkerboardFloorGrid,
                   (i) {
-                    final x = i % (cellSize * 2);
-                    final y = i ~/ (cellSize * 2);
-                    final isEven = ((x ~/ cellSize) + (y ~/ cellSize)).isEven;
+                    final x = i % checkerboardFloorGrid;
+                    final y = i ~/ checkerboardFloorGrid;
+                    final isEven = (x + y).isEven;
                     final c = isEven ? Colors.black : Colors.white;
                     return (c.a * 255).round() << 24 |
                         (c.r * 255).round() << 16 |
@@ -34,8 +34,8 @@ class RoomBounds extends Component {
                   },
                 ),
               ).buffer.asByteData(),
-              width: cellSize * 2,
-              height: cellSize * 2,
+              width: 32,
+              height: 32,
             ),
           ),
         ),
