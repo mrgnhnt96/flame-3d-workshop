@@ -1,4 +1,4 @@
-name: workspace
+name: flame_3d_workshop
 repository: https://github.com/bluefireteam/flutter_and_friends_2025_flame_3d_workshop_template
 workspace:
   - packages/playground
