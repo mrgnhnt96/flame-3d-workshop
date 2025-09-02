@@ -4,6 +4,7 @@ import 'package:flame/events.dart';
 import 'package:flame_3d/camera.dart';
 import 'package:flame_3d/components.dart';
 import 'package:flame_3d/game.dart';
+import 'package:flame_3d_workshop_playground/components/ball.dart';
 import 'package:flame_3d_workshop_playground/components/room_bounds.dart';
 import 'package:flame_3d_workshop_playground/control_type.dart';
 import 'package:flame_3d_workshop_playground/player.dart';
@@ -69,6 +70,8 @@ class Playground extends FlameGame3D<World3D, PlaygroundCamera>
       player = Player(
         position: Vector3(0, 1, 0),
       ),
+      for (var i = 0; i < 10; i++)
+        for (var j = 0; j < 10; j++) Ball(position: Vector3(i * 2, -.1, i * 2)),
     ]);
     return super.onLoad();
   }

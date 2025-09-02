@@ -41,7 +41,7 @@ class RoomBounds extends Component {
           size: Vector3(32, 5, 1),
           material: SpatialMaterial(
             albedoTexture: ColorTexture(
-              BasicPalette.blue.color,
+              BasicPalette.cyan.color,
             ),
           ),
         ),
