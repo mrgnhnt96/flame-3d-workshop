@@ -1,9 +1,13 @@
 import 'dart:async';
+import 'dart:typed_data';
 
 import 'package:flame/components.dart';
 import 'package:flame/palette.dart';
 import 'package:flame_3d/components.dart';
 import 'package:flame_3d/resources.dart';
+import 'package:flutter/material.dart' hide Texture;
+
+const int cellSize = 20;
 
 class RoomBounds extends Component {
   @override
@@ -14,8 +18,24 @@ class RoomBounds extends Component {
         mesh: PlaneMesh(
           size: Vector2(32, 32),
           material: SpatialMaterial(
-            albedoTexture: ColorTexture(
-              BasicPalette.gray.color,
+            albedoTexture: Texture(
+              Uint32List.fromList(
+                List.generate(
+                  cellSize * cellSize * 4,
+                  (i) {
+                    final x = i % (cellSize * 2);
+                    final y = i ~/ (cellSize * 2);
+                    final isEven = ((x ~/ cellSize) + (y ~/ cellSize)).isEven;
+                    final c = isEven ? Colors.black : Colors.white;
+                    return (c.a * 255).round() << 24 |
+                        (c.r * 255).round() << 16 |
+                        (c.g * 255).round() << 8 |
+                        (c.b * 255).round();
+                  },
+                ),
+              ).buffer.asByteData(),
+              width: cellSize * 2,
+              height: cellSize * 2,
             ),
           ),
         ),
