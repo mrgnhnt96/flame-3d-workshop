@@ -64,7 +64,7 @@ class Playground extends FlameGame3D<World3D, PlaygroundCamera>
 
   @override
   FutureOr<void> onLoad() async {
-    final player = Player(
+    player = Player(
       position: Vector3(0, 1, 0),
     );
     world.addAll([
