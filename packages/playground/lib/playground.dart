@@ -7,6 +7,7 @@ import 'package:flame_3d/game.dart';
 import 'package:flame_3d_workshop_playground/components/ball.dart';
 import 'package:flame_3d_workshop_playground/components/room_bounds.dart';
 import 'package:flame_3d_workshop_playground/control_type.dart';
+import 'package:flame_3d_workshop_playground/pet.dart';
 import 'package:flame_3d_workshop_playground/player.dart';
 import 'package:flame_3d_workshop_playground/playground_camera.dart';
 import 'package:flame_3d_workshop_playground/util/mouse.dart';
@@ -16,6 +17,7 @@ import 'package:flutter/widgets.dart';
 class Playground extends FlameGame3D<World3D, PlaygroundCamera>
     with HasKeyboardHandlerComponents {
   late Player player;
+  late Pet pet;
 
   Playground()
     : super(
@@ -62,13 +64,18 @@ class Playground extends FlameGame3D<World3D, PlaygroundCamera>
 
   @override
   FutureOr<void> onLoad() async {
+    final player = Player(
+      position: Vector3(0, 1, 0),
+    );
     world.addAll([
       RoomBounds(),
       LightComponent.ambient(
         intensity: 1.0,
       ),
-      player = Player(
-        position: Vector3(0, 1, 0),
+      player,
+      pet = Pet(
+        position: Vector3(5, 5, 0.25),
+        player: player,
       ),
       for (var i = 0; i < 10; i++)
         for (var j = 0; j < 10; j++) Ball(position: Vector3(i * 2, -.1, i * 2)),
