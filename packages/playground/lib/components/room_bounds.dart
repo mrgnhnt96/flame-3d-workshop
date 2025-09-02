@@ -7,7 +7,7 @@ import 'package:flame_3d/components.dart';
 import 'package:flame_3d/resources.dart';
 import 'package:flutter/material.dart' hide Texture;
 
-const checkerboardFloorGrid = 10;
+const checkerboardFloorGrid = 8;
 
 class RoomBounds extends Component {
   @override
